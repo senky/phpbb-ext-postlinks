@@ -1,0 +1,11 @@
+services:
+    senky.postlinks.post_links:
+        class: senky\postlinks\event\post_links
+        arguments:
+            - @template
+        tags:
+            - { name: event.listener }
+    senky.postlinks.post_links_acp:
+        class: senky\postlinks\event\post_links_acp
+        tags:
+            - { name: event.listener }
