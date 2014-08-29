@@ -27,15 +27,23 @@ class post_links implements EventSubscriberInterface
 		);
 	}
 
+	/** @var \phpbb\config\config */
+	protected $config;
+
 	/* @var \phpbb\template\template */
 	protected $template;
+
+		/** @var string */
+	protected $php_ext;
 
 	/**
 	* Constructor
 	*/
-	public function __construct(\phpbb\template\template $template)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, $php_ext)
 	{
+		$this->config = $config;
 		$this->template = $template;
+		$this->php_ext = $php_ext;
 	}
 
 	public function load_language_on_setup($event)
@@ -50,19 +58,17 @@ class post_links implements EventSubscriberInterface
 
 	public function add_long_url_link($event)
 	{
-		global $config, $phpEx;
-
 		$post_row = $event['post_row'];
 
-		$post_row['U_POST_LINK'] = append_sid(generate_board_url() . "/viewtopic.$phpEx", 'p=' . $event['row']['post_id']) . '#p' . $event['row']['post_id'];
+		$post_row['U_POST_LINK'] = append_sid(generate_board_url() . '/viewtopic.' . $this->php_ext, 'p=' . $event['row']['post_id']) . '#p' . $event['row']['post_id'];
 
 		$event['post_row'] = $post_row;
 
 		$this->template->assign_vars(array(
-			'S_LINKS_ENABLED'	=> $config['pl_enable'],
-			'S_LINKS_LINK_ENABLED'	=> $config['pl_link'],
-			'S_LINKS_BBCODE_ENABLED'	=> $config['pl_bbcode'],
-			'S_LINKS_HTML_ENABLED'	=> $config['pl_html'],
+			'S_LINKS_ENABLED'	=> $this->config['pl_enable'],
+			'S_LINKS_LINK_ENABLED'	=> $this->config['pl_link'],
+			'S_LINKS_BBCODE_ENABLED'	=> $this->config['pl_bbcode'],
+			'S_LINKS_HTML_ENABLED'	=> $this->config['pl_html'],
 		));
 	}
 }
