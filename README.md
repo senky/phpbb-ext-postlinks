@@ -2,6 +2,8 @@
 
 Post Links is an Extension for [phpBB 3.1](https://www.phpbb.com/)
 
+[![Build Status](https://travis-ci.org/Senky/phpbb-ext-postlinks.svg?branch=develop)](https://travis-ci.org/Senky/phpbb-ext-postlinks)
+
 ## Description
 
 This Extension will add links to all your posts. You can choose to display link, bb code and html format of post. Those links are hidden by default and user can show them by single click, so they do not make posts huge showing each 3 links after each post on page.
