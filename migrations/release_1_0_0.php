@@ -18,13 +18,13 @@ class release_1_0_0 extends \phpbb\db\migration\migration
 
 	static public function depends_on()
 	{
-		return array('\phpbb\db\migration\data\v310\rc3');
+		return array('\phpbb\db\migration\data\v310\gold');
 	}
 
 	public function update_data()
 	{
 		return array(
-			array('config.add', array('pl_enable', 0)),
+			array('config.add', array('pl_enable', 1)),
 			array('config.add', array('pl_link', 1)),
 			array('config.add', array('pl_bbcode', 1)),
 			array('config.add', array('pl_html', 1)),
