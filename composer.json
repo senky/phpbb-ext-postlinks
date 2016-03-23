@@ -14,7 +14,7 @@
 		"php": ">=5.3.3"
 	},
 	"require-dev": {
-		"phpbb/epv"
+		"phpbb/epv": "dev-master"
 	},
 	"extra": {
 		"display-name": "Post Links",
