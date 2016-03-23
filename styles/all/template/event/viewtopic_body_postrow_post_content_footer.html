@@ -1,0 +1,28 @@
+<!-- IF S_LINKS_ENABLED -->
+<hr />
+<table class="post_links_table" id="post_links_table_{postrow.POST_ID}">
+	<!-- IF S_LINKS_LINK_ENABLED -->
+	<tr>
+		<td>{L_PL_LINK}:</td>
+		<td><input type="text" value="{postrow.U_POST_LINK}" title="{L_CLICK_TO_COPY_LINK}" onclick="this.focus();this.select();" /></td>
+	</tr>
+	<!-- ENDIF -->
+	<!-- IF S_LINKS_BBCODE_ENABLED -->
+	<tr>
+		<td>{L_PL_BBCODE}:</td>
+		<td><input type="text" value="[url={postrow.U_POST_LINK}]{postrow.POST_SUBJECT}[/url]" title="{L_CLICK_TO_COPY_BBCODE}" onclick="this.focus();this.select();" /></td>
+	</tr>
+	<!-- ENDIF -->
+ 	<!-- IF S_LINKS_HTML_ENABLED -->
+	<tr>
+		<td>{L_PL_HTML}:</td>
+		<td><input type="text" value="&lt;a href=&quot;{postrow.U_POST_LINK}&quot;&gt;{postrow.POST_SUBJECT}&lt;/a&gt;" title="{L_CLICK_TO_COPY_HTML}" onclick="this.focus();this.select();" /></td>
+	</tr>
+	<!-- ENDIF -->
+	<tr>
+		<td></td>
+		<td class="post_links_hide"><a href="#" onclick="phpbb.toggleDisplay('post_links_table_{postrow.POST_ID}'); phpbb.toggleDisplay('post_links_div_{postrow.POST_ID}'); return false;">{L_PL_HIDE}</a></td>
+	</tr>
+</table>
+<div class="post_links_show" id="post_links_div_{postrow.POST_ID}"><a href="#" onclick="phpbb.toggleDisplay('post_links_table_{postrow.POST_ID}'); phpbb.toggleDisplay('post_links_div_{postrow.POST_ID}'); return false;">{L_PL_SHOW}</a></div>
+<!-- ENDIF -->
