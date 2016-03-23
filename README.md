@@ -2,7 +2,7 @@
 
 Post Links is an Extension for [phpBB 3.1](https://www.phpbb.com/)
 
-[![Build Status](https://travis-ci.org/Senky/phpbb-ext-postlinks.svg?branch=develop)](https://travis-ci.org/Senky/phpbb-ext-postlinks)
+[![Build Status](https://travis-ci.org/Senky/phpbb-ext-postlinks.svg?branch=master)](https://travis-ci.org/Senky/phpbb-ext-postlinks)
 
 ## Description
 
