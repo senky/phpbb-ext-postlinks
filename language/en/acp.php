@@ -18,11 +18,11 @@ if (empty($lang) || !is_array($lang))
 }
 
 $lang = array_merge($lang, array(
-	'ACP_POST_LINKS'				=> 'Post links',
+	'ACP_POST_LINKS'	=> 'Post links',
 
-	'PL_ENABLE'				=> 'Allow post links',
-	'PL_ENABLE_EXPLAIN'				=> 'If allowed, each post will contain copyable links of types allowed bellow.',
-	'PL_LINK_ENABLE'				=> 'Allow plain link',
-	'PL_BBCODE_ENABLE'				=> 'Allow BBcode link',
-	'PL_HTML_ENABLE'				=> 'Allow HTML link',
+	'PL_ENABLE'			=> 'Allow post links',
+	'PL_ENABLE_EXPLAIN'	=> 'If allowed, each post will contain copyable links of types allowed bellow.',
+	'PL_LINK_ENABLE'	=> 'Allow plain link',
+	'PL_BBCODE_ENABLE'	=> 'Allow BBcode link',
+	'PL_HTML_ENABLE'	=> 'Allow HTML link',
 ));
