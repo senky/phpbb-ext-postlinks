@@ -11,5 +11,7 @@ services:
 
     senky.postlinks.post_links_acp:
         class: senky\postlinks\event\post_links_acp
+        arguments:
+            - '@user'
         tags:
             - { name: event.listener }

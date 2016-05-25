@@ -3,19 +3,19 @@
 <table class="post_links_table" id="post_links_table_{postrow.POST_ID}">
 	<!-- IF S_LINKS_LINK_ENABLED -->
 	<tr>
-		<td>{L_PL_LINK}:</td>
+		<td>{L_PL_LINK}{L_COLON}</td>
 		<td><input type="text" value="{postrow.U_POST_LINK}" title="{L_CLICK_TO_COPY_LINK}" onclick="this.focus();this.select();" /></td>
 	</tr>
 	<!-- ENDIF -->
 	<!-- IF S_LINKS_BBCODE_ENABLED -->
 	<tr>
-		<td>{L_PL_BBCODE}:</td>
+		<td>{L_PL_BBCODE}{L_COLON}</td>
 		<td><input type="text" value="[url={postrow.U_POST_LINK}]{postrow.POST_SUBJECT}[/url]" title="{L_CLICK_TO_COPY_BBCODE}" onclick="this.focus();this.select();" /></td>
 	</tr>
 	<!-- ENDIF -->
  	<!-- IF S_LINKS_HTML_ENABLED -->
 	<tr>
-		<td>{L_PL_HTML}:</td>
+		<td>{L_PL_HTML}{L_COLON}</td>
 		<td><input type="text" value="&lt;a href=&quot;{postrow.U_POST_LINK}&quot;&gt;{postrow.POST_SUBJECT}&lt;/a&gt;" title="{L_CLICK_TO_COPY_HTML}" onclick="this.focus();this.select();" /></td>
 	</tr>
 	<!-- ENDIF -->

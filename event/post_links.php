@@ -40,8 +40,14 @@ class post_links implements EventSubscriberInterface
 	protected $php_ext;
 
 	/**
-	* Constructor
-	*/
+	 * Constructor
+	 *
+	 * @param \phpbb\config\config		$config		Config object
+	 * @param \phpbb\template\template	$template	Template object
+	 * @param \phpbb\user				$user		User object
+	 * @param string					$php_ext	phpEx
+	 * @access public
+	 */
 	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, \phpbb\user $user, $php_ext)
 	{
 		$this->config = $config;

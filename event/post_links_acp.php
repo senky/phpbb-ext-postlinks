@@ -22,30 +22,28 @@ class post_links_acp implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.user_setup'						=> 'load_language_on_setup',
-			'core.acp_board_config_edit_add'		=> 'add_options',
+			'core.acp_board_config_edit_add'	=> 'add_options',
 		);
 	}
+
+	/* @var \phpbb\user */
+	protected $user;
 
 	/**
-	* Constructor
-	*/
-	public function __construct()
+	 * Constructor
+	 *
+	 * @param \phpbb\user	$user	User object
+	 * @access public
+	 */
+	public function __construct(\phpbb\user $user)
 	{
-	}
-
-	public function load_language_on_setup($event)
-	{
-		$lang_set_ext = $event['lang_set_ext'];
-		$lang_set_ext[] = array(
-			'ext_name' => 'senky/postlinks',
-			'lang_set' => 'acp',
-		);
-		$event['lang_set_ext'] = $lang_set_ext;
+		$this->user = $user;
 	}
 
 	public function add_options($event)
 	{
+		$this->user->add_lang_ext('senky/postlinks', 'acp');
+
 		$display_vars = $event['display_vars'];
 
 		if ($event['mode'] == 'post')
