@@ -2,12 +2,13 @@ services:
     senky.postlinks.post_links:
         class: senky\postlinks\event\post_links
         arguments:
-            - @config
-            - @template
-            - @user
-            - %core.php_ext%
+            - '@config'
+            - '@template'
+            - '@user'
+            - '%core.php_ext%'
         tags:
             - { name: event.listener }
+
     senky.postlinks.post_links_acp:
         class: senky\postlinks\event\post_links_acp
         tags:
