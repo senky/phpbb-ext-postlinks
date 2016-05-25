@@ -22,8 +22,8 @@ class post_links implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.user_setup'						=> 'load_language_on_setup',
-			'core.viewtopic_modify_post_row'		=> 'add_long_url_link',
+			'core.viewtopic_modify_page_title'	=> 'load_language_file',
+			'core.viewtopic_modify_post_row'	=> 'add_long_url_link',
 		);
 	}
 
@@ -33,27 +33,26 @@ class post_links implements EventSubscriberInterface
 	/* @var \phpbb\template\template */
 	protected $template;
 
-		/** @var string */
+	/* @var \phpbb\user */
+	protected $user;
+
+	/** @var string */
 	protected $php_ext;
 
 	/**
 	* Constructor
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, $php_ext)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, \phpbb\user $user, $php_ext)
 	{
 		$this->config = $config;
 		$this->template = $template;
+		$this->user = $user;
 		$this->php_ext = $php_ext;
 	}
 
-	public function load_language_on_setup($event)
+	public function load_language_file()
 	{
-		$lang_set_ext = $event['lang_set_ext'];
-		$lang_set_ext[] = array(
-			'ext_name' => 'senky/postlinks',
-			'lang_set' => 'common',
-		);
-		$event['lang_set_ext'] = $lang_set_ext;
+		$this->user->add_lang_ext('senky/postlinks', 'common');
 	}
 
 	public function add_long_url_link($event)
