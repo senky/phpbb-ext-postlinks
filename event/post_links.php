@@ -59,7 +59,8 @@ class post_links implements EventSubscriberInterface
 	{
 		$post_row = $event['post_row'];
 
-		$post_row['U_POST_LINK'] = append_sid(generate_board_url() . '/viewtopic.' . $this->php_ext, 'p=' . $event['row']['post_id']) . '#p' . $event['row']['post_id'];
+		// do not use append_sid, since those are general links
+		$post_row['U_POST_LINK'] = generate_board_url() . '/viewtopic.' . $this->php_ext . '?p=' . $event['row']['post_id'] . '#p' . $event['row']['post_id'];
 
 		$event['post_row'] = $post_row;
 
