@@ -1,5 +1,8 @@
-.post_links_table {
+.hasjs .post_links_table {
 	display: none;
+}
+.post_links_table {
+	width: 100%;
 }
 .post_links_table input {
 	width: 100%;
@@ -12,4 +15,9 @@
 
 .post_links_show {
 	cursor: pointer;
+}
+
+.nojs .post_links_hide,
+.nojs .post_links_show {
+	display: none;
 }
