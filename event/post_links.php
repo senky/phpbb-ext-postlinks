@@ -22,7 +22,7 @@ class post_links implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.viewtopic_modify_page_title'	=> 'load_language_file',
+			'core.viewtopic_modify_page_title'	=> 'load_language_and_template',
 			'core.viewtopic_modify_post_row'	=> 'add_long_url_link',
 		);
 	}
@@ -56,9 +56,16 @@ class post_links implements EventSubscriberInterface
 		$this->php_ext = $php_ext;
 	}
 
-	public function load_language_file()
+	public function load_language_and_template()
 	{
 		$this->user->add_lang_ext('senky/postlinks', 'common');
+
+		$this->template->assign_vars(array(
+			'S_LINKS_ENABLED'	=> $this->config['pl_enable'],
+			'S_LINKS_LINK_ENABLED'	=> $this->config['pl_link'],
+			'S_LINKS_BBCODE_ENABLED'	=> $this->config['pl_bbcode'],
+			'S_LINKS_HTML_ENABLED'	=> $this->config['pl_html'],
+		));
 	}
 
 	public function add_long_url_link($event)
@@ -69,12 +76,5 @@ class post_links implements EventSubscriberInterface
 		$post_row['U_POST_LINK'] = generate_board_url() . '/viewtopic.' . $this->php_ext . '?p=' . $event['row']['post_id'] . '#p' . $event['row']['post_id'];
 
 		$event['post_row'] = $post_row;
-
-		$this->template->assign_vars(array(
-			'S_LINKS_ENABLED'	=> $this->config['pl_enable'],
-			'S_LINKS_LINK_ENABLED'	=> $this->config['pl_link'],
-			'S_LINKS_BBCODE_ENABLED'	=> $this->config['pl_bbcode'],
-			'S_LINKS_HTML_ENABLED'	=> $this->config['pl_html'],
-		));
 	}
 }
