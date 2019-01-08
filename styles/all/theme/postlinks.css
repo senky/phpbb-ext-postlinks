@@ -6,6 +6,7 @@
 }
 .post_links_table input {
 	width: 100%;
+	cursor: pointer;
 }
 
 .post_links_hide {

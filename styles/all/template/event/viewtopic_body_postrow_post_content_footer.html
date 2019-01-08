@@ -4,19 +4,19 @@
 	<!-- IF S_LINKS_LINK_ENABLED -->
 	<tr>
 		<td>{L_PL_LINK}{L_COLON}</td>
-		<td><input type="text" value="{postrow.U_POST_LINK}" title="{L_CLICK_TO_COPY_LINK}" onclick="this.focus();this.select();" /></td>
+		<td><input type="text" value="{postrow.U_POST_LINK}" title="{L_CLICK_TO_COPY_LINK}" onclick="this.focus();this.select();document.execCommand('copy');" /></td>
 	</tr>
 	<!-- ENDIF -->
 	<!-- IF S_LINKS_BBCODE_ENABLED -->
 	<tr>
 		<td>{L_PL_BBCODE}{L_COLON}</td>
-		<td><input type="text" value="[url={postrow.U_POST_LINK}]{postrow.POSTLINKS_POST_SUBJECT}[/url]" title="{L_CLICK_TO_COPY_BBCODE}" onclick="this.focus();this.select();" /></td>
+		<td><input type="text" value="[url={postrow.U_POST_LINK}]{postrow.POSTLINKS_POST_SUBJECT}[/url]" title="{L_CLICK_TO_COPY_BBCODE}" onclick="this.focus();this.select();document.execCommand('copy');" /></td>
 	</tr>
 	<!-- ENDIF -->
  	<!-- IF S_LINKS_HTML_ENABLED -->
 	<tr>
 		<td>{L_PL_HTML}{L_COLON}</td>
-		<td><input type="text" value="<a href=&quot;{postrow.U_POST_LINK}&quot;>{postrow.POSTLINKS_POST_SUBJECT}</a>" title="{L_CLICK_TO_COPY_HTML}" onclick="this.focus();this.select();" /></td>
+		<td><input type="text" value="<a href=&quot;{postrow.U_POST_LINK}&quot;>{postrow.POSTLINKS_POST_SUBJECT}</a>" title="{L_CLICK_TO_COPY_HTML}" onclick="this.focus();this.select();document.execCommand('copy');" /></td>
 	</tr>
 	<!-- ENDIF -->
 	<tr>
