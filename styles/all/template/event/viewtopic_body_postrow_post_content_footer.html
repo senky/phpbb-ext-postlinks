@@ -4,25 +4,25 @@
 	{% if S_LINKS_LINK_ENABLED %}
 	<tr>
 		<td>{{ lang('PL_LINK') ~ lang('COLON') }}</td>
-		<td><input type="text" value="{{ postrow.U_POST_LINK }}" title="{{ lang('CLICK_TO_COPY_LINK') }}" onclick="this.focus();this.select();document.execCommand('copy');" /></td>
+		<td><input type="text" value="{{ postrow.U_POST_LINK }}" title="{{ lang('CLICK_TO_COPY_LINK') }}" /></td>
 	</tr>
 	{% endif %}
 	{% if S_LINKS_BBCODE_ENABLED %}
 	<tr>
 		<td>{{ lang('PL_BBCODE') ~ lang('COLON') }}</td>
-		<td><input type="text" value="[url={{ postrow.U_POST_LINK }}]{{ postrow.POSTLINKS_POST_SUBJECT }}[/url]" title="{{ lang('CLICK_TO_COPY_BBCODE') }}" onclick="this.focus();this.select();document.execCommand('copy');" /></td>
+		<td><input type="text" value="[url={{ postrow.U_POST_LINK }}]{{ postrow.POSTLINKS_POST_SUBJECT }}[/url]" title="{{ lang('CLICK_TO_COPY_BBCODE') }}" /></td>
 	</tr>
 	{% endif %}
  	{% if S_LINKS_HTML_ENABLED %}
 	<tr>
 		<td>{{ lang('PL_HTML') ~ lang('COLON') }}</td>
-		<td><input type="text" value="<a href=&quot;{{ postrow.U_POST_LINK }}&quot;>{{ postrow.POSTLINKS_POST_SUBJECT }}</a>" title="{{ lang('CLICK_TO_COPY_HTML') }}" onclick="this.focus();this.select();document.execCommand('copy');" /></td>
+		<td><input type="text" value="<a href=&quot;{{ postrow.U_POST_LINK }}&quot;>{{ postrow.POSTLINKS_POST_SUBJECT }}</a>" title="{{ lang('CLICK_TO_COPY_HTML') }}" /></td>
 	</tr>
 	{% endif %}
 	<tr>
 		<td></td>
-		<td class="post_links_hide"><a href="#" onclick="phpbb.toggleDisplay('post_links_table_{{ postrow.POST_ID }}'); phpbb.toggleDisplay('post_links_div_{{ postrow.POST_ID }}'); return false;">{{ lang('PL_HIDE') }}</a></td>
+		<td class="post_links_hide"><a href="#" data-postid="{{ postrow.POST_ID }}">{{ lang('PL_HIDE') }}</a></td>
 	</tr>
 </table>
-<div class="post_links_show" id="post_links_div_{{ postrow.POST_ID }}"><a href="#" onclick="phpbb.toggleDisplay('post_links_table_{{ postrow.POST_ID }}'); phpbb.toggleDisplay('post_links_div_{{ postrow.POST_ID }}'); return false;">{{ lang('PL_SHOW') }}</a></div>
+<div class="post_links_show" id="post_links_div_{{ postrow.POST_ID }}"><a href="#" data-postid="{{ postrow.POST_ID }}">{{ lang('PL_SHOW') }}</a></div>
 {% endif %}
