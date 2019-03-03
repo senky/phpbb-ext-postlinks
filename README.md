@@ -1,6 +1,6 @@
-# phpBB 3.1 Post Links Extension
+# phpBB 3.2 Post Links Extension
 
-Post Links is an Extension for [phpBB 3.1](https://www.phpbb.com/)
+Post Links is an Extension for [phpBB 3.2](https://www.phpbb.com/)
 
 [![Build Status](https://travis-ci.org/Senky/phpbb-ext-postlinks.svg?branch=develop)](https://travis-ci.org/Senky/phpbb-ext-postlinks)
 
