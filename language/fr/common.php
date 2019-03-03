@@ -4,7 +4,7 @@
  * Post Links. An extension for the phpBB Forum Software package.
  * French translation by Galixte (http://www.galixte.com)
  *
- * @copyright (c) 2018 Jakub Senko
+ * @copyright (c) 2019 Jakub Senko
  * @license GNU General Public License, version 2 (GPL-2.0-only)
  *
  */
@@ -46,7 +46,7 @@ $lang = array_merge($lang, array(
 	'PL_HIDE'				=> 'Masquer les liens de partage du message',
 	'PL_SHOW'				=> 'Afficher les liens de partage du message',
 
-	'CLICK_TO_COPY_LINK'	=> 'Cliquer pour sélectionner le lien brut du message',
-	'CLICK_TO_COPY_BBCODE'	=> 'Cliquer pour sélectionner le lien formaté en BBcode du message',
-	'CLICK_TO_COPY_HTML'	=> 'Cliquer pour sélectionner le lien formaté en HTML du message',
+	'CLICK_TO_COPY_LINK'	=> 'Cliquer pour copier le lien brut du message',
+	'CLICK_TO_COPY_BBCODE'	=> 'Cliquer pour copier le lien formaté en BBcode du message',
+	'CLICK_TO_COPY_HTML'	=> 'Cliquer pour copier le lien formaté en HTML du message',
 ));
